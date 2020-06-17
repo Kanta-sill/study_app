@@ -1,0 +1,148 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <include file="example.xml"/>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+       <action name="login.baconsoi" class="app.loginAction">
+           <result name="SUCCESS" type="redirectAction">View</result>
+           <result name="SUCCESSTRAINER">/trainerCourse.jsp</result>
+            <result name="FALSE">
+                /Error.jsp
+            </result>
+        </action>
+        <action name="addAction" class="app.addAction">
+            <result name="SUCCESS" type="redirectAction">View</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="delete" class="app.DeleteAction">
+            <result name="SUCCESS">/Index.jsp</result>
+             <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="View" class="app.ViewCourseAction">
+            <result name="SUCCESS">/Viewdata.jsp</result>
+            <result name="RETURN">/Login.jsp</result>
+        </action>
+        <action name="update" class="app.UpdateAction">
+            <result name="SUCCESS">/update.jsp</result>
+        </action>
+        <action name="doUpdate" class="app.DoUpdateAction">
+            <result name="SUCCESS" type="redirectAction">View</result>
+            <result name="FAILED">/Error.jsp</result>
+        </action>
+        <action name="detail" class="app.UpdateAction">
+            <result name="SUCCESS">/CourseDetail.jsp</result>
+        </action>
+        
+        <action name="detailtrainer" class="app.UpdateAction">
+            <result name="SUCCESS">/CourseDetailTrainer.jsp</result>
+        </action>
+        
+        
+        
+        <action name="search" class="app.SearchAction">
+            <result name="SUCCESS">/Viewdata.jsp</result>
+        </action>
+        <action name="signout" class="app.LogoutAction">
+            <result name="SUCCESS">/Login.jsp</result>
+        </action>
+        
+        <action name="searchTrainee" class="app.SearchTraineeAction">
+            <result name="SUCCESS">/ViewAssignTrainee.jsp</result>
+        </action>
+        <action name="ViewTrainee" class="app.ViewTraineeAction">
+            <result name="SUCCESS">/assign.jsp</result>
+        </action>
+        <action name="ViewClass" class="app.ViewClass">
+            <result name="SUCCESS">/assign.jsp</result>
+        </action>
+        <action name="addClass" class="app.AddClass">
+            <result name="SUCCESS" type="redirectAction">ViewClass</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="showtrainee" class="app.ShowTrainee">
+            <result name="SUCCESS">/AssignList.jsp</result>
+        </action>
+        
+        <action name="assignToCourse" class="app.AddAssignTrainee">
+            <result name="SUCCESS">/ViewAssignTrainee.jsp</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="assigntrainee" class="app.ViewAssignTrainee">
+            <result name="SUCCESS">/ViewAssignTrainee.jsp</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="ViewClassAssignList" class="app.ShowCourseTrainee">
+            <result name="SUCCESS">/AssignList.jsp</result>
+        </action>
+        <action name="deleteAsignList" class="app.DeleteClass">
+            <result name="SUCCESS">/ViewAssignTrainee.jsp</result>
+             <result name="FALSE">/Error.jsp</result>
+        </action>
+        
+        
+        <action name="deleteClass" class="app.DeleteClass">
+            <result name="SUCCESS" type="redirectAction">ViewClass</result>
+             <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="detailtrainee" class="app.TraineeDetail">
+            <result name="SUCCESS">/DetailTrainee.jsp</result>
+        </action>
+        
+        <action name="addTopic" class="app.TopicAction">
+            <result name="SUCCESS" type="redirectAction">ViewTopic</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="ViewTopic" class="app.ViewTopicAction">
+            <result name="SUCCESS">/ViewTopic.jsp</result>
+        </action>
+        <action name="deleteTopic" class="app.DeleteTopic">
+            <result name="SUCCESS" type="redirectAction">ViewTopic</result>
+             <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="updateTopic" class="app.UpdateTopic">
+            <result name="SUCCESS">/updateTopic.jsp</result>
+        </action>
+        <action name="doUpdateTopic" class="app.DoUpdateTopic">
+            <result name="SUCCESS" type="redirectAction">ViewTopic</result>
+            <result name="FAILED">/Error.jsp</result>
+        </action>
+        
+        
+        <action name="addCate" class="app.CateAction">
+            <result name="SUCCESS" type="redirectAction">ViewCate</result>
+            <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="ViewCate" class="app.ViewCateAction">
+            <result name="SUCCESS">/ViewCate.jsp</result>
+        </action>
+        <action name="deleteCate" class="app.DeleteCate">
+            <result name="SUCCESS" type="redirectAction">ViewCate</result>
+             <result name="FALSE">/Error.jsp</result>
+        </action>
+        <action name="updateCate" class="app.UpdateCate">
+            <result name="SUCCESS">/updateCate.jsp</result>
+        </action>
+        <action name="doUpdateCate" class="app.DoUpdateCate">
+            <result name="SUCCESS" type="redirectAction">ViewCate</result>
+            <result name="FAILED">/Error.jsp</result>
+        </action>
+        
+        <action name="ViewCourseTrainer" class="app.TrainerViewCourse">
+            <result name="SUCCESS">/trainerCourse.jsp</result>
+            <result name="RETURN">/Login.jsp</result>
+        </action>
+        <action name="ViewTrainer" class="app.TrainerView">
+            <result name="SUCCESS">/trainerPro.jsp</result>
+        </action>
+        <action name="updateTrainer" class="app.TrainerUpdate">
+            <result name="SUCCESS">/trainerUpdate.jsp</result>
+        </action>
+        <action name="doUpdateTrainer" class="app.TrainerDoUpdate">
+            <result name="SUCCESS" type="redirectAction">ViewTrainer</result>
+            <result name="FAILED">/Error.jsp</result>
+        </action>
+    </package>
+</struts>
