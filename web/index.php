@@ -1,1 +1,1 @@
-<?php include_once("Index.jsp"); ?>
+<?php include_once("index.jsp"); ?>
